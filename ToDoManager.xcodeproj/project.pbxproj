@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		E77E92CE1D96EEC800101667 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92CD1D96EEC800101667 /* main.m */; };
 		E77E92D11D96EEC800101667 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92D01D96EEC800101667 /* AppDelegate.m */; };
-		E77E92D41D96EEC800101667 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92D31D96EEC800101667 /* ViewController.m */; };
 		E77E92D71D96EEC800101667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77E92D51D96EEC800101667 /* Main.storyboard */; };
 		E77E92DA1D96EEC800101667 /* ToDoManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E77E92D81D96EEC800101667 /* ToDoManager.xcdatamodeld */; };
 		E77E92DC1D96EEC800101667 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77E92DB1D96EEC800101667 /* Assets.xcassets */; };
 		E77E92DF1D96EEC800101667 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77E92DD1D96EEC800101667 /* LaunchScreen.storyboard */; };
+		E77E92E81D96F02300101667 /* MyNavigationControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92E71D96F02300101667 /* MyNavigationControllerViewController.m */; };
+		E77E92EE1D96F11100101667 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92ED1D96F11100101667 /* MyTableViewController.m */; };
+		E77E92F11D96F1AE00101667 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92F01D96F1AE00101667 /* MyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +23,19 @@
 		E77E92CD1D96EEC800101667 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E77E92CF1D96EEC800101667 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E77E92D01D96EEC800101667 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E77E92D21D96EEC800101667 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E77E92D31D96EEC800101667 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E77E92D61D96EEC800101667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E77E92D91D96EEC800101667 /* ToDoManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoManager.xcdatamodel; sourceTree = "<group>"; };
 		E77E92DB1D96EEC800101667 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E77E92DE1D96EEC800101667 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E77E92E01D96EEC800101667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E77E92E61D96F02300101667 /* MyNavigationControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationControllerViewController.h; sourceTree = "<group>"; };
+		E77E92E71D96F02300101667 /* MyNavigationControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationControllerViewController.m; sourceTree = "<group>"; };
+		E77E92EC1D96F11100101667 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		E77E92ED1D96F11100101667 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
+		E77E92EF1D96F1AE00101667 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		E77E92F01D96F1AE00101667 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		E77E92F21D97B79500101667 /* AGMOCHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMOCHandler.h; sourceTree = "<group>"; };
+		E77E92F31D97B8C300101667 /* AGToDoEntryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGToDoEntryHandler.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,16 +68,18 @@
 		E77E92CB1D96EEC800101667 /* ToDoManager */ = {
 			isa = PBXGroup;
 			children = (
+				E77E92E91D96F02A00101667 /* Model */,
+				E77E92EA1D96F03200101667 /* View */,
+				E77E92EB1D96F03900101667 /* Controller */,
 				E77E92CF1D96EEC800101667 /* AppDelegate.h */,
 				E77E92D01D96EEC800101667 /* AppDelegate.m */,
-				E77E92D21D96EEC800101667 /* ViewController.h */,
-				E77E92D31D96EEC800101667 /* ViewController.m */,
 				E77E92D51D96EEC800101667 /* Main.storyboard */,
 				E77E92DB1D96EEC800101667 /* Assets.xcassets */,
 				E77E92DD1D96EEC800101667 /* LaunchScreen.storyboard */,
 				E77E92E01D96EEC800101667 /* Info.plist */,
-				E77E92D81D96EEC800101667 /* ToDoManager.xcdatamodeld */,
 				E77E92CC1D96EEC800101667 /* Supporting Files */,
+				E77E92F21D97B79500101667 /* AGMOCHandler.h */,
+				E77E92F31D97B8C300101667 /* AGToDoEntryHandler.h */,
 			);
 			path = ToDoManager;
 			sourceTree = "<group>";
@@ -80,6 +90,34 @@
 				E77E92CD1D96EEC800101667 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E77E92E91D96F02A00101667 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E77E92D81D96EEC800101667 /* ToDoManager.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E77E92EA1D96F03200101667 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E77E92EB1D96F03900101667 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E77E92E61D96F02300101667 /* MyNavigationControllerViewController.h */,
+				E77E92E71D96F02300101667 /* MyNavigationControllerViewController.m */,
+				E77E92EC1D96F11100101667 /* MyTableViewController.h */,
+				E77E92ED1D96F11100101667 /* MyTableViewController.m */,
+				E77E92EF1D96F1AE00101667 /* MyViewController.h */,
+				E77E92F01D96F1AE00101667 /* MyViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +192,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E77E92D41D96EEC800101667 /* ViewController.m in Sources */,
+				E77E92F11D96F1AE00101667 /* MyViewController.m in Sources */,
+				E77E92E81D96F02300101667 /* MyNavigationControllerViewController.m in Sources */,
 				E77E92DA1D96EEC800101667 /* ToDoManager.xcdatamodeld in Sources */,
+				E77E92EE1D96F11100101667 /* MyTableViewController.m in Sources */,
 				E77E92D11D96EEC800101667 /* AppDelegate.m in Sources */,
 				E77E92CE1D96EEC800101667 /* main.m in Sources */,
 			);
