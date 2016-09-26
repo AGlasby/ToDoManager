@@ -7,11 +7,11 @@
 //
 
 #import "MyTableViewController.h"
-#import "AGToDoCell.h"
 
-@interface MyTableViewController ()
+@interface MyTableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -19,12 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 -(void)receiveMOC:(NSManagedObjectContext *)incommingMOC {
@@ -94,6 +89,9 @@
     id<AGMOCHandler> child = (id<AGMOCHandler>)[segue destinationViewController];
     [child receiveMOC:self.managedObjectContext];
 }
+
+#pragma mark - Fetched Results Controller
+
 
 
 @end

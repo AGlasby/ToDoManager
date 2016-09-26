@@ -10,6 +10,16 @@
 
 @implementation AGToDoCell
 
+-(void)setInternalFields:(ToDoEntity *)incommingToDoEntity{
 
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+
+    self.toDoTitle.text = incommingToDoEntity.toDoTitle;
+    self.toDoDueDate.text = [dateFormatter stringFromDate:incommingToDoEntity.toDoDueDate];
+    _localToDoEntity = incommingToDoEntity;
+
+}
 
 @end

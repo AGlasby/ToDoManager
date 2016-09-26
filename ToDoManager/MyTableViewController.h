@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 #import "AGMOCHandler.h"
+#import "AGToDoCell.h"
 
 @interface MyTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, AGMOCHandler>
 
