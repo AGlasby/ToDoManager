@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AGMOCHandler.h"
 
-@interface MyTableViewController : UITableViewController
+@interface MyTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, AGMOCHandler>
+
+-(void)receiveMOC:(NSManagedObjectContext *)incommingMOC;
+
+@property (strong, nonatomic) IBOutlet UITableView *toDoTableView;
 
 @end

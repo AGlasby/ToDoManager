@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AGMOCHandler.h"
 
-@interface MyNavigationControllerViewController : UINavigationController
+@interface MyNavigationControllerViewController : UINavigationController<AGMOCHandler>
+
+-(void)receiveMOC:(NSManagedObjectContext *)incommingMOC;
 
 @end

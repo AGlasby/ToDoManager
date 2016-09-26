@@ -16,6 +16,9 @@
 		E77E92E81D96F02300101667 /* MyNavigationControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92E71D96F02300101667 /* MyNavigationControllerViewController.m */; };
 		E77E92EE1D96F11100101667 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92ED1D96F11100101667 /* MyTableViewController.m */; };
 		E77E92F11D96F1AE00101667 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92F01D96F1AE00101667 /* MyViewController.m */; };
+		E7AA76C81D986D6F00E7531A /* ToDoEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AA76C51D986D6F00E7531A /* ToDoEntity+CoreDataClass.m */; };
+		E7AA76C91D986D6F00E7531A /* ToDoEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AA76C71D986D6F00E7531A /* ToDoEntity+CoreDataProperties.m */; };
+		E7AA76CC1D98F17C00E7531A /* AGToDoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AA76CB1D98F17C00E7531A /* AGToDoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,12 @@
 		E77E92F01D96F1AE00101667 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		E77E92F21D97B79500101667 /* AGMOCHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGMOCHandler.h; sourceTree = "<group>"; };
 		E77E92F31D97B8C300101667 /* AGToDoEntryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGToDoEntryHandler.h; sourceTree = "<group>"; };
+		E7AA76C41D986D6F00E7531A /* ToDoEntity+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ToDoEntity+CoreDataClass.h"; path = "../ToDoEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		E7AA76C51D986D6F00E7531A /* ToDoEntity+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ToDoEntity+CoreDataClass.m"; path = "../ToDoEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		E7AA76C61D986D6F00E7531A /* ToDoEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ToDoEntity+CoreDataProperties.h"; path = "../ToDoEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E7AA76C71D986D6F00E7531A /* ToDoEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ToDoEntity+CoreDataProperties.m"; path = "../ToDoEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		E7AA76CA1D98F17C00E7531A /* AGToDoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGToDoCell.h; sourceTree = "<group>"; };
+		E7AA76CB1D98F17C00E7531A /* AGToDoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGToDoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +104,13 @@
 		E77E92E91D96F02A00101667 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7AA76C41D986D6F00E7531A /* ToDoEntity+CoreDataClass.h */,
+				E7AA76C51D986D6F00E7531A /* ToDoEntity+CoreDataClass.m */,
+				E7AA76C61D986D6F00E7531A /* ToDoEntity+CoreDataProperties.h */,
+				E7AA76C71D986D6F00E7531A /* ToDoEntity+CoreDataProperties.m */,
 				E77E92D81D96EEC800101667 /* ToDoManager.xcdatamodeld */,
+				E7AA76CA1D98F17C00E7531A /* AGToDoCell.h */,
+				E7AA76CB1D98F17C00E7531A /* AGToDoCell.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -192,8 +207,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7AA76CC1D98F17C00E7531A /* AGToDoCell.m in Sources */,
+				E7AA76C91D986D6F00E7531A /* ToDoEntity+CoreDataProperties.m in Sources */,
 				E77E92F11D96F1AE00101667 /* MyViewController.m in Sources */,
 				E77E92E81D96F02300101667 /* MyNavigationControllerViewController.m in Sources */,
+				E7AA76C81D986D6F00E7531A /* ToDoEntity+CoreDataClass.m in Sources */,
 				E77E92DA1D96EEC800101667 /* ToDoManager.xcdatamodeld in Sources */,
 				E77E92EE1D96F11100101667 /* MyTableViewController.m in Sources */,
 				E77E92D11D96EEC800101667 /* AppDelegate.m in Sources */,
@@ -356,6 +374,7 @@
 				E77E92E51D96EEC800101667 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

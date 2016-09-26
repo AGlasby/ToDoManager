@@ -9,6 +9,7 @@
 #import "MyViewController.h"
 
 @interface MyViewController ()
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
 
@@ -19,9 +20,8 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)receiveMOC:(NSManagedObjectContext *)incommingMOC {
+    self.managedObjectContext = incommingMOC;
 }
 
 /*
