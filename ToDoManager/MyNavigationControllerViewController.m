@@ -8,6 +8,7 @@
 
 #import "MyNavigationControllerViewController.h"
 
+
 @interface MyNavigationControllerViewController ()
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
@@ -21,10 +22,12 @@
 }
 
 -(void)receiveMOC:(NSManagedObjectContext *)incommingMOC {
-    self.managedObjectContext = incommingMOC;
+    _managedObjectContext = incommingMOC;
     id<AGMOCHandler> child = (id<AGMOCHandler>)self.viewControllers[0];
     [child receiveMOC:self.managedObjectContext];
 }
+
+
 
 /*
 #pragma mark - Navigation

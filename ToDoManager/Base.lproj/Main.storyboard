@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S0e-KD-gGJ" id="l8D-V1-U3S">
-                                    <frame key="frameInset" width="375" height="69"/>
+                                    <frame key="frameInset" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Io-51-AQS" userLabel="Title Label">
@@ -41,7 +41,6 @@
                                         <constraint firstItem="tVF-Zx-wM8" firstAttribute="leading" secondItem="0Io-51-AQS" secondAttribute="trailing" constant="8" symbolic="YES" id="WTO-mn-Zl4"/>
                                         <constraint firstItem="tVF-Zx-wM8" firstAttribute="centerY" secondItem="l8D-V1-U3S" secondAttribute="centerY" id="lHV-bj-fhR"/>
                                         <constraint firstItem="0Io-51-AQS" firstAttribute="leading" secondItem="l8D-V1-U3S" secondAttribute="leadingMargin" id="mdd-RM-1QN"/>
-                                        <constraint firstItem="tVF-Zx-wM8" firstAttribute="centerX" secondItem="0Io-51-AQS" secondAttribute="centerX" id="uhF-SG-vFg"/>
                                         <constraint firstItem="tVF-Zx-wM8" firstAttribute="trailing" secondItem="l8D-V1-U3S" secondAttribute="trailingMargin" id="wOU-B6-9NP"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -117,6 +116,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <action selector="toDoTitleField:" destination="nhJ-eT-n7j" eventType="editingDidEnd" id="nXN-s0-kQJ"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oGt-UU-r7o">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -134,6 +136,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="496597657.22170699">
                                     <!--2016-09-26 15:47:37 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dueDateEdited:" destination="nhJ-eT-n7j" eventType="editingDidEnd" id="ljF-xR-8bP"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

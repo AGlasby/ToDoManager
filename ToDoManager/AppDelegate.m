@@ -21,6 +21,7 @@
     
     [self persistentContainer];
     NSManagedObjectContext *moc = [_persistentContainer viewContext];
+
     id<AGMOCHandler> child = (id<AGMOCHandler>)self.window.rootViewController;
     [child receiveMOC:moc];
 

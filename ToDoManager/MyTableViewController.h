@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "AGMOCHandler.h"
+#import "AGToDoEntryHandler.h"
 #import "AGToDoCell.h"
 
 @interface MyTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, AGMOCHandler, NSFetchedResultsControllerDelegate>
 
 -(void)receiveMOC:(NSManagedObjectContext *)incommingMOC;
+//-(void)receiveToDoEntity:(ToDoEntity *)incommingToDoEntity;
 
 @property (strong, nonatomic) IBOutlet UITableView *toDoTableView;
 
