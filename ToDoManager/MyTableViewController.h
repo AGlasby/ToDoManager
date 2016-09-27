@@ -11,7 +11,7 @@
 #import "AGMOCHandler.h"
 #import "AGToDoCell.h"
 
-@interface MyTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, AGMOCHandler>
+@interface MyTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, AGMOCHandler, NSFetchedResultsControllerDelegate>
 
 -(void)receiveMOC:(NSManagedObjectContext *)incommingMOC;
 

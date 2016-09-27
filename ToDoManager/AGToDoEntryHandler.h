@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ToDoEntity+CoreDataClass.h"
 
 @protocol AGToDoEntryHandler <NSObject>
 

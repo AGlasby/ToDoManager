@@ -18,10 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-
+    
+    [self persistentContainer];
     NSManagedObjectContext *moc = [_persistentContainer viewContext];
-//    NSAssert(moc != nil, @"Not able to create managed object context");
-
     id<AGMOCHandler> child = (id<AGMOCHandler>)self.window.rootViewController;
     [child receiveMOC:moc];
 

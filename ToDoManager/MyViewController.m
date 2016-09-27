@@ -25,6 +25,11 @@
     self.managedObjectContext = incommingMOC;
 }
 
+- (void)receiveToDoEntity:(ToDoEntity *)incommingToDoEntity {
+    self.localToDoEntity = incommingToDoEntity;
+    
+}
+
 /*
 #pragma mark - Navigation
 
