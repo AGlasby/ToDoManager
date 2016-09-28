@@ -37,7 +37,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="0Io-51-AQS" firstAttribute="centerY" secondItem="l8D-V1-U3S" secondAttribute="centerY" id="349-fv-60h"/>
-                                        <constraint firstItem="0Io-51-AQS" firstAttribute="width" secondItem="tVF-Zx-wM8" secondAttribute="width" multiplier="3" id="QAn-lK-Gmx"/>
+                                        <constraint firstItem="0Io-51-AQS" firstAttribute="width" secondItem="tVF-Zx-wM8" secondAttribute="width" multiplier="2" id="QAn-lK-Gmx"/>
                                         <constraint firstItem="tVF-Zx-wM8" firstAttribute="leading" secondItem="0Io-51-AQS" secondAttribute="trailing" constant="8" symbolic="YES" id="WTO-mn-Zl4"/>
                                         <constraint firstItem="tVF-Zx-wM8" firstAttribute="centerY" secondItem="l8D-V1-U3S" secondAttribute="centerY" id="lHV-bj-fhR"/>
                                         <constraint firstItem="0Io-51-AQS" firstAttribute="leading" secondItem="l8D-V1-U3S" secondAttribute="leadingMargin" id="mdd-RM-1QN"/>
@@ -47,6 +47,7 @@
                                 <connections>
                                     <outlet property="toDoDueDate" destination="tVF-Zx-wM8" id="rAG-Si-wx7"/>
                                     <outlet property="toDoTitle" destination="0Io-51-AQS" id="5OX-C1-0T8"/>
+                                    <segue destination="nhJ-eT-n7j" kind="show" identifier="openEditToDo" id="jDP-5o-0VA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -109,7 +110,7 @@
                                 <color key="textColor" red="0.002546587962" green="0.053493373800000001" blue="0.2354967949" alpha="0.87" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HGr-mz-gk8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HGr-mz-gk8">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="weI-HH-8R5"/>
                                 </constraints>
@@ -162,7 +163,13 @@
                             <constraint firstItem="Bhx-8j-Chw" firstAttribute="width" secondItem="3h5-j2-979" secondAttribute="width" id="tRg-fy-xdY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="To Do" id="Sws-Jy-skh"/>
+                    <navigationItem key="navigationItem" title="To Do" id="Sws-Jy-skh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="LYJ-dg-URg">
+                            <connections>
+                                <action selector="trashToDoTapped:" destination="nhJ-eT-n7j" id="aY5-fc-YzT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="toDoDetailsTxtView" destination="oGt-UU-r7o" id="cUI-Nf-93y"/>
                         <outlet property="toDoDueDatePkr" destination="LFK-2B-Enz" id="xVr-60-QDY"/>
@@ -190,4 +197,7 @@
             <point key="canvasLocation" x="-580" y="27"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jDP-5o-0VA"/>
+    </inferredMetricsTieBreakers>
 </document>

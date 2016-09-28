@@ -11,7 +11,6 @@
 
 @interface MyNavigationControllerViewController ()
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
 @end
 
 @implementation MyNavigationControllerViewController
@@ -26,7 +25,6 @@
     id<AGMOCHandler> child = (id<AGMOCHandler>)self.viewControllers[0];
     [child receiveMOC:self.managedObjectContext];
 }
-
 
 
 /*

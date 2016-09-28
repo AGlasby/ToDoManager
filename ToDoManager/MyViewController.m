@@ -11,6 +11,7 @@
 @interface MyViewController ()
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, assign) BOOL wasTrashed;
 
 @end
 
@@ -23,6 +24,7 @@
 
 
 - (void) viewWillAppear:(BOOL)animated {
+    self.wasTrashed = NO;
     self.toDoTitleTxtFld.text = self.localToDoEntity.toDoTitle;
     self.toDoDetailsTxtView.text = self.localToDoEntity.toDoDetails;
     NSDate *dueDate = self.localToDoEntity.toDoDueDate;
@@ -36,6 +38,13 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextViewTextDidEndEditingNotification object:self];
+    
+    if(self.wasTrashed == NO) {
+    self.localToDoEntity.toDoTitle = _toDoTitleTxtFld.text;
+    self.localToDoEntity.toDoDetails = _toDoDetailsTxtView.text;
+    self.localToDoEntity.toDoDueDate = _toDoDueDatePkr.date;
+    [self saveToDoEntity];
+    }
 }
 
 
@@ -74,6 +83,12 @@
 - (IBAction)dueDateEdited:(id)sender {
     self.localToDoEntity.toDoDueDate = self.toDoDueDatePkr.date;
         [self saveToDoEntity];
+}
+- (IBAction)trashToDoTapped:(id)sender {
+    self.wasTrashed = YES;
+    [self.managedObjectContext deleteObject:self.localToDoEntity];
+    [self saveToDoEntity];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

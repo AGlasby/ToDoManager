@@ -91,13 +91,18 @@
     id<AGMOCHandler, AGToDoEntryHandler> child = (id<AGMOCHandler, AGToDoEntryHandler>)[segue destinationViewController];
     [child receiveMOC:self.managedObjectContext];
 
-    ToDoEntity *item = [NSEntityDescription insertNewObjectForEntityForName:@"ToDoEntity" inManagedObjectContext:self.managedObjectContext];
-    item.toDoTitle = @"";
-    item.toDoDetails = @"";
-    NSDate *today = [NSDate date];
-    item.toDoDueDate = today;
+    ToDoEntity *item = [NSEntityDescription
+        insertNewObjectForEntityForName:@"ToDoEntity" inManagedObjectContext:self.managedObjectContext];
+    if([segue.identifier  isEqual: @"openAddToDo"]) {
+        item.toDoTitle = @"";
+        item.toDoDetails = @"";
+        NSDate *today = [NSDate date];
+        item.toDoDueDate = today;
+    } else {
+        AGToDoCell *source = (AGToDoCell *)sender;
+        item = source.localToDoEntity;
+    }
     [child receiveToDoEntity:item];
-
 
 }
 
