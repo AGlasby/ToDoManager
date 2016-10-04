@@ -1,9 +1,8 @@
-
 //
 //  ToDoEntity+CoreDataProperties.h
 //  ToDoManager
 //
-//  Created by Alan Glasby on 28/09/2016.
+//  Created by Alan Glasby on 03/10/2016.
 //  Copyright © 2016 Alan Glasby. All rights reserved.
 //
 

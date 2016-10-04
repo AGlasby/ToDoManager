@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E767C7631DA2C85200B48714 /* ToDoEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E767C7601DA2C85200B48714 /* ToDoEntity+CoreDataClass.m */; };
+		E767C7671DA2F67400B48714 /* ToDoEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E767C7661DA2F67400B48714 /* ToDoEntity+CoreDataProperties.m */; };
 		E77E92CE1D96EEC800101667 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92CD1D96EEC800101667 /* main.m */; };
 		E77E92D11D96EEC800101667 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92D01D96EEC800101667 /* AppDelegate.m */; };
 		E77E92D71D96EEC800101667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77E92D51D96EEC800101667 /* Main.storyboard */; };
@@ -17,11 +19,13 @@
 		E77E92EE1D96F11100101667 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92ED1D96F11100101667 /* MyTableViewController.m */; };
 		E77E92F11D96F1AE00101667 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77E92F01D96F1AE00101667 /* MyViewController.m */; };
 		E7AA76CC1D98F17C00E7531A /* AGToDoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AA76CB1D98F17C00E7531A /* AGToDoCell.m */; };
-		E7FAE8431D9BAC50006AA45D /* ToDoEntity+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FAE8401D9BAC50006AA45D /* ToDoEntity+CoreDataClass.m */; };
-		E7FAE8441D9BAC50006AA45D /* ToDoEntity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FAE8421D9BAC50006AA45D /* ToDoEntity+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E767C75F1DA2C85200B48714 /* ToDoEntity+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ToDoEntity+CoreDataClass.h"; path = "../ToDoEntity+CoreDataClass.h"; sourceTree = "<group>"; };
+		E767C7601DA2C85200B48714 /* ToDoEntity+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ToDoEntity+CoreDataClass.m"; path = "../ToDoEntity+CoreDataClass.m"; sourceTree = "<group>"; };
+		E767C7651DA2F67400B48714 /* ToDoEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ToDoEntity+CoreDataProperties.h"; path = "../ToDoEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		E767C7661DA2F67400B48714 /* ToDoEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ToDoEntity+CoreDataProperties.m"; path = "../ToDoEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		E77E92C91D96EEC800101667 /* ToDoManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E77E92CD1D96EEC800101667 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E77E92CF1D96EEC800101667 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,10 +45,6 @@
 		E77E92F31D97B8C300101667 /* AGToDoEntryHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGToDoEntryHandler.h; sourceTree = "<group>"; };
 		E7AA76CA1D98F17C00E7531A /* AGToDoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGToDoCell.h; sourceTree = "<group>"; };
 		E7AA76CB1D98F17C00E7531A /* AGToDoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGToDoCell.m; sourceTree = "<group>"; };
-		E7FAE83F1D9BAC50006AA45D /* ToDoEntity+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoEntity+CoreDataClass.h"; sourceTree = "<group>"; };
-		E7FAE8401D9BAC50006AA45D /* ToDoEntity+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDoEntity+CoreDataClass.m"; sourceTree = "<group>"; };
-		E7FAE8411D9BAC50006AA45D /* ToDoEntity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoEntity+CoreDataProperties.h"; sourceTree = "<group>"; };
-		E7FAE8421D9BAC50006AA45D /* ToDoEntity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ToDoEntity+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 		E77E92E91D96F02A00101667 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E7FAE83F1D9BAC50006AA45D /* ToDoEntity+CoreDataClass.h */,
-				E7FAE8401D9BAC50006AA45D /* ToDoEntity+CoreDataClass.m */,
+				E767C75F1DA2C85200B48714 /* ToDoEntity+CoreDataClass.h */,
+				E767C7601DA2C85200B48714 /* ToDoEntity+CoreDataClass.m */,
 				E7FAE83E1D9BA60A006AA45D /* Generated */,
 				E77E92D81D96EEC800101667 /* ToDoManager.xcdatamodeld */,
 				E7AA76CA1D98F17C00E7531A /* AGToDoCell.h */,
@@ -137,8 +137,8 @@
 		E7FAE83E1D9BA60A006AA45D /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				E7FAE8411D9BAC50006AA45D /* ToDoEntity+CoreDataProperties.h */,
-				E7FAE8421D9BAC50006AA45D /* ToDoEntity+CoreDataProperties.m */,
+				E767C7651DA2F67400B48714 /* ToDoEntity+CoreDataProperties.h */,
+				E767C7661DA2F67400B48714 /* ToDoEntity+CoreDataProperties.m */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
@@ -215,12 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E767C7671DA2F67400B48714 /* ToDoEntity+CoreDataProperties.m in Sources */,
 				E7AA76CC1D98F17C00E7531A /* AGToDoCell.m in Sources */,
 				E77E92F11D96F1AE00101667 /* MyViewController.m in Sources */,
+				E767C7631DA2C85200B48714 /* ToDoEntity+CoreDataClass.m in Sources */,
 				E77E92E81D96F02300101667 /* MyNavigationControllerViewController.m in Sources */,
 				E77E92DA1D96EEC800101667 /* ToDoManager.xcdatamodeld in Sources */,
-				E7FAE8441D9BAC50006AA45D /* ToDoEntity+CoreDataProperties.m in Sources */,
-				E7FAE8431D9BAC50006AA45D /* ToDoEntity+CoreDataClass.m in Sources */,
 				E77E92EE1D96F11100101667 /* MyTableViewController.m in Sources */,
 				E77E92D11D96EEC800101667 /* AppDelegate.m in Sources */,
 				E77E92CE1D96EEC800101667 /* main.m in Sources */,

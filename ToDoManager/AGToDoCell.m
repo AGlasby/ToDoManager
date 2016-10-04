@@ -15,6 +15,8 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    NSLocale *ukLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_UK"];
+    [dateFormatter setLocale:ukLocale];
 
     self.toDoTitle.text = incommingToDoEntity.toDoTitle;
     self.toDoDueDate.text = [dateFormatter stringFromDate:incommingToDoEntity.toDoDueDate];

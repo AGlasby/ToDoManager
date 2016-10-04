@@ -20,13 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeNSFetchedResultsControllerDelegate];
-
-
 }
+
 
 -(void)receiveMOC:(NSManagedObjectContext *)incommingMOC {
     self.managedObjectContext = incommingMOC;
 }
+
 
 #pragma mark - Table view data source
 
@@ -34,9 +34,9 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.resultsController.sections[section].numberOfObjects;
-
 }
 
 
@@ -46,13 +46,14 @@
     AGToDoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToDoCell" forIndexPath:indexPath];
     
     [cell setInternalFields:item];
-    
     return cell;
 }
+
 
 - (void) controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
+
 
 - (void) controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
     switch (type) {
@@ -69,14 +70,14 @@
             break;
         }
         case NSFetchedResultsChangeMove: {
-            [[self tableView] deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [[self tableView] insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [[self tableView] moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
             break;
         }
         default:
             break;
     }
 }
+
 
 - (void) controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView endUpdates];
@@ -85,14 +86,13 @@
 
 #pragma mark - Navigation
 
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [segue destinationViewController];
     id<AGMOCHandler, AGToDoEntryHandler> child = (id<AGMOCHandler, AGToDoEntryHandler>)[segue destinationViewController];
     [child receiveMOC:self.managedObjectContext];
-
+    
     ToDoEntity *item = [NSEntityDescription
-        insertNewObjectForEntityForName:@"ToDoEntity" inManagedObjectContext:self.managedObjectContext];
+                        insertNewObjectForEntityForName:@"ToDoEntity" inManagedObjectContext:self.managedObjectContext];
     if([segue.identifier  isEqual: @"openAddToDo"]) {
         item.toDoTitle = @"";
         item.toDoDetails = @"";
@@ -103,8 +103,8 @@
         item = source.localToDoEntity;
     }
     [child receiveToDoEntity:item];
-
 }
+
 
 #pragma mark - Fetched Results Controller
 
@@ -112,7 +112,7 @@
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     fetchRequest.entity = [NSEntityDescription entityForName:@"ToDoEntity" inManagedObjectContext:self.managedObjectContext];
     fetchRequest.predicate = [NSPredicate predicateWithFormat:@"TRUEPREDICATE"];
-    fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"toDoTitle" ascending:YES]];
+    fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"toDoDueDate" ascending:YES]];
     self.resultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     self.resultsController.delegate = self;
     NSError *err;
