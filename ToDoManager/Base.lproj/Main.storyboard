@@ -57,11 +57,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do List" id="jQV-Dr-kVJ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JyH-od-r6O">
-                            <connections>
-                                <segue destination="nhJ-eT-n7j" kind="show" identifier="openAddToDo" id="VLr-aU-kf7"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JyH-od-r6O"/>
                     </navigationItem>
                     <connections>
                         <outlet property="toDoTableView" destination="oXU-mU-Ece" id="xCA-f6-kSA"/>
@@ -141,6 +137,38 @@
                                     <action selector="dueDateEdited:" destination="nhJ-eT-n7j" eventType="editingDidEnd" id="ljF-xR-8bP"/>
                                 </connections>
                             </datePicker>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrB-oH-dN0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="UhT-ks-2jd"/>
+                                    <constraint firstAttribute="width" constant="30" id="hf2-tH-CAq"/>
+                                </constraints>
+                                <state key="normal" image="unchecked"/>
+                                <connections>
+                                    <action selector="urgentTapped:" destination="nhJ-eT-n7j" eventType="touchUpInside" id="QYn-Oo-sBh"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="tJA-Bt-2g6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="1VY-1r-dd1"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Home"/>
+                                    <segment title="Car"/>
+                                    <segment title="Work"/>
+                                </segments>
+                                <connections>
+                                    <action selector="categorySelected:" destination="nhJ-eT-n7j" eventType="valueChanged" id="kLh-CB-t1h"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Urgent:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXq-qz-hfU">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="JJv-IF-XXb"/>
+                                    <constraint firstAttribute="height" constant="24" id="KwJ-g0-hdD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.002546587962" green="0.053493373800000001" blue="0.2354967949" alpha="0.87" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -148,32 +176,35 @@
                             <constraint firstItem="HGr-mz-gk8" firstAttribute="leading" secondItem="zfK-hb-toI" secondAttribute="leadingMargin" constant="8" id="3h1-d7-t7V"/>
                             <constraint firstItem="LFK-2B-Enz" firstAttribute="top" secondItem="oos-Uq-9m4" secondAttribute="bottom" constant="8" id="CPf-ah-PZW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oGt-UU-r7o" secondAttribute="trailing" constant="8" id="Coe-hT-4VR"/>
+                            <constraint firstItem="tJA-Bt-2g6" firstAttribute="leading" secondItem="zfK-hb-toI" secondAttribute="leadingMargin" constant="8" id="E06-QR-AIe"/>
                             <constraint firstItem="Bhx-8j-Chw" firstAttribute="top" secondItem="HGr-mz-gk8" secondAttribute="bottom" constant="16" id="Fk6-QN-OED"/>
                             <constraint firstItem="oGt-UU-r7o" firstAttribute="leading" secondItem="zfK-hb-toI" secondAttribute="leadingMargin" constant="8" id="G8F-tn-4gy"/>
+                            <constraint firstItem="UrB-oH-dN0" firstAttribute="centerY" secondItem="PXq-qz-hfU" secondAttribute="centerY" id="JtS-Jh-fR4"/>
                             <constraint firstItem="LFK-2B-Enz" firstAttribute="leading" secondItem="zfK-hb-toI" secondAttribute="leadingMargin" id="MAP-R3-nD5"/>
                             <constraint firstItem="LFK-2B-Enz" firstAttribute="trailing" secondItem="zfK-hb-toI" secondAttribute="trailingMargin" id="NBx-ut-ppM"/>
                             <constraint firstItem="oos-Uq-9m4" firstAttribute="width" secondItem="3h5-j2-979" secondAttribute="width" id="XSN-oS-lTz"/>
+                            <constraint firstItem="tJA-Bt-2g6" firstAttribute="top" secondItem="LFK-2B-Enz" secondAttribute="bottom" constant="48" id="ajX-qJ-XfC"/>
                             <constraint firstItem="3h5-j2-979" firstAttribute="top" secondItem="gcx-WT-Exe" secondAttribute="bottom" constant="24" id="bI8-eh-ZQ1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HGr-mz-gk8" secondAttribute="trailing" constant="8" id="bOo-9a-azU"/>
+                            <constraint firstItem="UrB-oH-dN0" firstAttribute="leading" secondItem="PXq-qz-hfU" secondAttribute="trailing" constant="56" id="biL-ML-cM5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tJA-Bt-2g6" secondAttribute="trailing" constant="8" id="eyJ-F4-LaR"/>
                             <constraint firstItem="Bhx-8j-Chw" firstAttribute="trailing" secondItem="3h5-j2-979" secondAttribute="trailing" id="hUY-N6-N7t"/>
                             <constraint firstItem="oGt-UU-r7o" firstAttribute="top" secondItem="Bhx-8j-Chw" secondAttribute="bottom" constant="8" id="ish-ny-UuU"/>
                             <constraint firstItem="oos-Uq-9m4" firstAttribute="top" secondItem="oGt-UU-r7o" secondAttribute="bottom" constant="16" id="k03-J1-VxT"/>
                             <constraint firstItem="3h5-j2-979" firstAttribute="leading" secondItem="zfK-hb-toI" secondAttribute="leadingMargin" constant="8" id="o1W-0K-wJY"/>
                             <constraint firstItem="oos-Uq-9m4" firstAttribute="trailing" secondItem="3h5-j2-979" secondAttribute="trailing" id="qVZ-MD-piX"/>
+                            <constraint firstItem="PXq-qz-hfU" firstAttribute="leading" secondItem="3h5-j2-979" secondAttribute="trailing" constant="30" id="qWQ-i2-GW4"/>
                             <constraint firstItem="Bhx-8j-Chw" firstAttribute="width" secondItem="3h5-j2-979" secondAttribute="width" id="tRg-fy-xdY"/>
+                            <constraint firstItem="PXq-qz-hfU" firstAttribute="centerY" secondItem="3h5-j2-979" secondAttribute="centerY" id="z2g-aG-PFa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="To Do" id="Sws-Jy-skh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="LYJ-dg-URg">
-                            <connections>
-                                <action selector="trashToDoTapped:" destination="nhJ-eT-n7j" id="aY5-fc-YzT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="To Do" id="Sws-Jy-skh"/>
                     <connections>
+                        <outlet property="catSegmentedControl" destination="tJA-Bt-2g6" id="2ow-As-zDD"/>
                         <outlet property="toDoDetailsTxtView" destination="oGt-UU-r7o" id="cUI-Nf-93y"/>
                         <outlet property="toDoDueDatePkr" destination="LFK-2B-Enz" id="xVr-60-QDY"/>
                         <outlet property="toDoTitleTxtFld" destination="HGr-mz-gk8" id="6Kp-Qq-dYE"/>
+                        <outlet property="urgentCheckBox" destination="UrB-oH-dN0" id="bmI-jQ-Q64"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAe-a1-AAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,7 +228,7 @@
             <point key="canvasLocation" x="-580" y="27"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="jDP-5o-0VA"/>
-    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="unchecked" width="30" height="30"/>
+    </resources>
 </document>

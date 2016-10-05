@@ -11,10 +11,12 @@
 @interface MyViewController ()
 
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, assign) BOOL wasTrashed;
 @property (nonatomic, assign) BOOL closing;
 @property (nonatomic, assign) BOOL toDoChanged;
 @property (nonatomic, assign) BOOL newToDo;
+@property (nonatomic, assign) BOOL urgentChecked;
+@property (weak, nonatomic) IBOutlet UIButton *urgentCheckBox;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *catSegmentedControl;
 
 @end
 
@@ -26,12 +28,27 @@
 
 
 - (void) viewWillAppear:(BOOL)animated {
-    self.wasTrashed = NO;
     self.closing = NO;
     self.toDoChanged = NO;
+    self.urgentChecked = NO;
 
     self.toDoTitleTxtFld.text = self.localToDoEntity.toDoTitle;
     self.toDoDetailsTxtView.text = self.localToDoEntity.toDoDetails;
+    self.urgentCheckBox.highlighted = self.localToDoEntity.toDoUrgent;
+    switch (self.localToDoEntity.toDoCategory) {
+        case CAT_CAR:
+            self.catSegmentedControl.selectedSegmentIndex = CAT_CAR;
+            break;
+        case CAT_HOME:
+             self.catSegmentedControl.selectedSegmentIndex = CAT_HOME;
+            break;
+        case CAT_WORK:
+            self.catSegmentedControl.selectedSegmentIndex = CAT_WORK;
+            break;
+        default:
+            break;
+    }
+    
     NSDate *dueDate = self.localToDoEntity.toDoDueDate;
     if(dueDate != nil) {
         [self.toDoDueDatePkr setDate:dueDate];
@@ -47,19 +64,17 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextFieldTextDidChangeNotification object:self];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextViewTextDidChangeNotification object:self];
 
-
-    if(self.wasTrashed == NO) {
-        if((self.newToDo != YES) && (self.toDoChanged == YES)) {
-            self.localToDoEntity.toDoTitle = _toDoTitleTxtFld.text;
-            self.localToDoEntity.toDoDetails = _toDoDetailsTxtView.text;
-            self.localToDoEntity.toDoDueDate = _toDoDueDatePkr.date;
+    if((self.newToDo != YES) && (self.toDoChanged == YES)) {
+        self.localToDoEntity.toDoTitle = _toDoTitleTxtFld.text;
+        self.localToDoEntity.toDoDetails = _toDoDetailsTxtView.text;
+        self.localToDoEntity.toDoUrgent = _urgentChecked;
+        self.localToDoEntity.toDoDueDate = _toDoDueDatePkr.date;
+        [self saveToDoEntity];
+        self.closing = YES;
+    } else {
+        if((self.newToDo == YES) && (self.toDoChanged == NO)) {
+            [self.managedObjectContext deleteObject:self.localToDoEntity];
             [self saveToDoEntity];
-            self.closing = YES;
-        } else {
-            if((self.newToDo == YES) && (self.toDoChanged == NO)) {
-                [self.managedObjectContext deleteObject:self.localToDoEntity];
-                [self saveToDoEntity];
-            }
         }
     }
 }
@@ -127,11 +142,40 @@
     [self saveToDoEntity];
 }
 
-- (IBAction)trashToDoTapped:(id)sender {
-    self.wasTrashed = YES;
-    [self.managedObjectContext deleteObject:self.localToDoEntity];
-//  [self saveToDoEntity];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+
+- (IBAction)urgentTapped:(id)sender {
+    if(!_urgentChecked) {
+        [self.urgentCheckBox setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+        _urgentChecked = YES;
+        self.localToDoEntity.toDoUrgent = YES;
+    } else {
+        [self.urgentCheckBox setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+        _urgentChecked = YES;
+        self.localToDoEntity.toDoUrgent = NO;
+    }
+    [self saveToDoEntity];
 }
+
+
+- (IBAction)categorySelected:(UISegmentedControl *)sender {
+    
+    switch ([sender selectedSegmentIndex]) {
+        case 0:
+            self.localToDoEntity.toDoCategory = CAT_CAR;
+            break;
+        case 1:
+            self.localToDoEntity.toDoCategory = CAT_HOME;
+            break;
+        case 2:
+            self.localToDoEntity.toDoCategory = CAT_WORK;
+            break;
+        default:
+            break;
+    }
+        [self saveToDoEntity];
+}
+
+
+
 
 @end

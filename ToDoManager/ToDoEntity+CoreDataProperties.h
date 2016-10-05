@@ -2,7 +2,7 @@
 //  ToDoEntity+CoreDataProperties.h
 //  ToDoManager
 //
-//  Created by Alan Glasby on 03/10/2016.
+//  Created by Alan on 04/10/2016.
 //  Copyright © 2016 Alan Glasby. All rights reserved.
 //
 
@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *toDoDetails;
 @property (nullable, nonatomic, copy) NSDate *toDoDueDate;
 @property (nullable, nonatomic, copy) NSString *toDoTitle;
+@property (nonatomic) BOOL toDoUrgent;
+@property (nonatomic) int16_t toDoCategory;
 
 @end
 

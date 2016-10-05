@@ -2,7 +2,7 @@
 //  ToDoEntity+CoreDataProperties.m
 //  ToDoManager
 //
-//  Created by Alan Glasby on 03/10/2016.
+//  Created by Alan on 04/10/2016.
 //  Copyright © 2016 Alan Glasby. All rights reserved.
 //
 
@@ -17,5 +17,7 @@
 @dynamic toDoDetails;
 @dynamic toDoDueDate;
 @dynamic toDoTitle;
+@dynamic toDoUrgent;
+@dynamic toDoCategory;
 
 @end
